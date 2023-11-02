@@ -2,13 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { createRoom, getRooms, Room } from "../firestore/room";
 import { useUser } from "../auth/UserContext";
-import {
-  Card,
-  CardContent,
-  Typography,
-  CardActions,
-  Button,
-} from "@mui/material";
+import { Card, CardContent, Typography } from "@mui/material";
 
 function RoomList() {
   const [rooms, setRooms] = useState<Room[]>([]);
