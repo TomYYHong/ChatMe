@@ -91,6 +91,7 @@ function Room() {
                 type="text"
                 value={newMessage}
                 onChange={(e) => setNewMessage(e.target.value)}
+                style={{ width: "70%", height: "30px" }}
               />
               <button onClick={handleSendMessage}>Send</button>
             </div>

@@ -125,7 +125,9 @@ function RoomList() {
             <button onClick={handleCreateRoom}>Create Room</button>
           )}
         </div>
-      ) : null}
+      ) : (
+        <h1>Register or sign in to join the chat room</h1>
+      )}
     </div>
   );
 }
