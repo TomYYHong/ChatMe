@@ -9,7 +9,6 @@ function RoomList() {
   const { user } = useUser();
   const [showCreateTextarea, setShowCreateTextarea] = useState(false);
   const [newRoomName, setNewRoomName] = useState("");
-  const [userlist, setUserList] = useState([]);
 
   const fetchRooms = async () => {
     const roomsData = await getRooms();
