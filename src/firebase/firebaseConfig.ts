@@ -4,7 +4,8 @@ import { getAuth } from 'firebase/auth';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_FIREBASE_API_KEY_TEST,
+    // apiKey: import.meta.env.VITE_FIREBASE_API_KEY_TEST,
+    apiKey: process.env.VITE_FIREBASE_API_KEY_TEST,
     authDomain: "chatme-af595.firebaseapp.com",
     projectId: "chatme-af595",
     storageBucket: "chatme-af595.appspot.com",
