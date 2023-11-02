@@ -13,7 +13,7 @@ export default function Header() {
         <Toolbar>
           <Link to="/">
             {" "}
-            <Button style={{ color: "black" }}>Rooms</Button>
+            <Button style={{ color: "black", fontSize: "30px" }}>Rooms</Button>
           </Link>
           <Typography
             variant="h6"

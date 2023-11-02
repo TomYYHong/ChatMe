@@ -18,7 +18,7 @@ const App: React.FC = () => {
         </Grid>
         <Routes>
           <Route path="/" element={<RoomList />} />
-          <Route path="/room/:roomId" element={<Room />} />
+          <Route path="/room/:roomId/:roomName" element={<Room />} />
           <Route path="*" element={<p>Page not found</p>} />
         </Routes>
       </UserProvider>

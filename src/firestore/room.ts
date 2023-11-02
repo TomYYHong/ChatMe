@@ -1,4 +1,4 @@
-import { addDoc, collection, getDocs, query } from "firebase/firestore";
+import { addDoc, collection, getDocs, orderBy, query } from "firebase/firestore";
 import { firestore } from "./firestoreConfig";
 
 export type Room = {
@@ -38,7 +38,7 @@ export const getMessages = async (roomId:string) => {
   const messages : ChatHistory[] = [];
   try {
       const chatHistoryCollectionRef = collection(firestore, "chatRoom", roomId, "chatHistory");
-      const chatHistoryQuerySnapshot = await getDocs(chatHistoryCollectionRef);
+      const chatHistoryQuerySnapshot = await getDocs(query(chatHistoryCollectionRef, orderBy('sendTime')));
       chatHistoryQuerySnapshot.forEach((chatHistoryDoc) => {
         messages.push({ chatId: chatHistoryDoc.id,...chatHistoryDoc.data() } as ChatHistory);
         

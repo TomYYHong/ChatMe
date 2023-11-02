@@ -4,7 +4,7 @@ import { ChatHistory, getMessages, sendMessage } from "../firestore/room";
 import { useUser } from "../auth/UserContext";
 
 function Room() {
-  const { roomId } = useParams();
+  const { roomId, roomName } = useParams();
   const { user } = useUser();
   const [messages, setMessages] = useState<ChatHistory[]>([]);
   const [newMessage, setNewMessage] = useState("");
@@ -31,32 +31,73 @@ function Room() {
   };
 
   return (
-    <div>
-      <h2>Chat Room</h2>
-      <div>
-        {messages.map((message) => (
-          <div key={message.chatId}>
-            {message.userId}
-            {message.message}
-            {message.sendTime.seconds && (
-              <div>
-                {new Date(message.sendTime.seconds * 1000).toLocaleString()}
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <div
+        style={{
+          width: "80%",
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
+          alignSelf: "center",
+        }}
+      >
+        <h2>{roomName}</h2>
+        <div style={{ width: "100%" }}>
+          {messages.map((message) => {
+            const isCurrentUser = message.userId === user?.userId;
+            const backgroundColor = isCurrentUser ? "#2979ff" : "#f1f1f1"; // Customize colors
+            const marginLeft = isCurrentUser ? "auto" : 0;
+            const marginRight = isCurrentUser ? 0 : "auto";
+            console.log(
+              "isCurrentUser: ",
+              isCurrentUser,
+              "message.userId: ",
+              message.userId,
+              "user?.userId: ",
+              user?.userId
+            );
+
+            return (
+              <div
+                key={message.chatId}
+                style={{
+                  backgroundColor: backgroundColor,
+                  marginLeft: marginLeft,
+                  marginRight: marginRight,
+                  width: "30%",
+                  marginBottom: "20px",
+                }}
+              >
+                <h4>{message.userDisplayName}</h4>
+                <h2>{message.message}</h2>
+                {message.sendTime.seconds && (
+                  <div>
+                    {new Date(message.sendTime.seconds * 1000).toLocaleString()}
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-        ))}
-        {user ? (
-          <div>
-            <input
-              type="text"
-              value={newMessage}
-              onChange={(e) => setNewMessage(e.target.value)}
-            />
-            <button onClick={handleSendMessage}>Send</button>
-          </div>
-        ) : (
-          <div></div>
-        )}
+            );
+          })}
+          {user ? (
+            <div>
+              <input
+                type="text"
+                value={newMessage}
+                onChange={(e) => setNewMessage(e.target.value)}
+              />
+              <button onClick={handleSendMessage}>Send</button>
+            </div>
+          ) : (
+            <div></div>
+          )}
+        </div>
       </div>
     </div>
   );

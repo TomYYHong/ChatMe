@@ -16,8 +16,16 @@ function Auth() {
   return (
     <div>
       {user ? (
-        <div>
-          <p>{user.displayName}</p>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "row",
+          }}
+        >
+          <p style={{ marginRight: "10px", fontWeight: "bold" }}>
+            {user.displayName}
+          </p>
           <button onClick={handleSignOut}>Sign Out</button>
         </div>
       ) : (
