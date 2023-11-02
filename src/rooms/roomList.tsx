@@ -26,7 +26,7 @@ function RoomList() {
   const handleCreateRoomSubmit = async () => {
     try {
       // Implement your room creation logic here
-      console.log("New room name:", newRoomName);
+      // console.log("New room name:", newRoomName);
       await createRoom(newRoomName);
 
       // Fetch rooms after creating the new room

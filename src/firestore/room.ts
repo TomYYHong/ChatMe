@@ -66,7 +66,7 @@ export const getRooms = async () => {
       });
     }
 
-    console.log("rooms: ", rooms);
+    // console.log("rooms: ", rooms);
   } catch (error) {
     console.error(error);
   }

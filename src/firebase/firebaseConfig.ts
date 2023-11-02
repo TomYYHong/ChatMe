@@ -4,7 +4,7 @@ import { getAuth } from 'firebase/auth';
 import 'firebase/firestore';
 //  const apiKey1 = import.meta.env.REACT_APP_FIREBASE_API_KEY;
 // const apiKey2 = process.env.REACT_APP_FIREBASE_API_KEY;
-// console.log("apiKey1: ",apiKey1,"apikey2: ",apiKey2);
+ console.log("apiKey: ",process.env.REACT_APP_FIREBASE_API_KEY);
 const firebaseConfig = {
     //  apiKey: apiKey1,
     // apiKey: process.env.FIREBASE_API_KEY,
