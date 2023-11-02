@@ -55,14 +55,14 @@ function Room() {
             const backgroundColor = isCurrentUser ? "#2979ff" : "#f1f1f1"; // Customize colors
             const marginLeft = isCurrentUser ? "auto" : 0;
             const marginRight = isCurrentUser ? 0 : "auto";
-            console.log(
-              "isCurrentUser: ",
-              isCurrentUser,
-              "message.userId: ",
-              message.userId,
-              "user?.userId: ",
-              user?.userId
-            );
+            // console.log(
+            //   "isCurrentUser: ",
+            //   isCurrentUser,
+            //   "message.userId: ",
+            //   message.userId,
+            //   "user?.userId: ",
+            //   user?.userId
+            // );
 
             return (
               <div

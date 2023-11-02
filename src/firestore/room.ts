@@ -46,7 +46,7 @@ export const getMessages = async (roomId:string) => {
   } catch (error) {
     console.error(error);
   }
-  console.log("message: ",messages)
+  // console.log("message: ",messages)
   return messages;
 };
 
