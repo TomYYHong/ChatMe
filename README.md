@@ -3,6 +3,7 @@
 React + TypeScript + Vite
 <h1><a href="https://main--chatme-tomhong.netlify.app/">Live Demo</a></h1>
 <br />
+
 ![image](https://github.com/TomYYHong/ChatMe/assets/56811243/2c36a6a8-09c6-4cc2-986a-de348a47a5f9)
 ![image](https://github.com/TomYYHong/ChatMe/assets/56811243/cc9927c4-0db6-4d68-af44-1bb14e000913)
 ![image](https://github.com/TomYYHong/ChatMe/assets/56811243/e078bba0-f383-4ded-a723-99ecd91f9bac)
