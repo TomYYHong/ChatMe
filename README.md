@@ -2,6 +2,7 @@
 
 React + TypeScript + Vite
 <h1><a href="https://main--chatme-tomhong.netlify.app/">Live Demo</a></h1>
+A live chat room application that implements Google Firebase authentication so users need to be logged in to their Google account to chat with other users!
 <br />
 
 ![image](https://github.com/TomYYHong/ChatMe/assets/56811243/2c36a6a8-09c6-4cc2-986a-de348a47a5f9)
